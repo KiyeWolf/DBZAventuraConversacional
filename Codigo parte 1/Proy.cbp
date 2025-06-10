@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Proy" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Proy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Proy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="character.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="character.h" />
+		<Unit filename="character_collection.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="character_collection.h" />
+		<Unit filename="character_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="character_manager.h" />
+		<Unit filename="character_stats.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="character_stats.h" />
+		<Unit filename="character_template.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="character_template.h" />
+		<Unit filename="enemy.h" />
+		<Unit filename="equipamiento.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="equipamiento.h" />
+		<Unit filename="item.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="item.h" />
+		<Unit filename="item_collection.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="item_collection.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="movement.h" />
+		<Unit filename="party.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="party.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
