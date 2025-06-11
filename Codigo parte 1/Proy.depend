@@ -1,0 +1,104 @@
+# depslib dependency file v1.0
+1748884550 source:c:\users\patri\documents\prog\proy\main.c
+	<stdio.h>
+	<stdlib.h>
+	"enemy.h"
+	"character.h"
+	<unistd.h>
+	<stdio.h>
+	<unistd.h>
+
+1749058824 c:\users\patri\documents\prog\proy\enemy.h
+	"movement.h"
+
+1746884722 c:\users\patri\documents\prog\proy\character_utils.h
+
+1749432232 source:c:\users\patri\documents\prog\proy\party.c
+	"party.h"
+
+1749079773 c:\users\patri\documents\prog\proy\party.h
+	"character.h"
+
+1746890247 c:\users\patri\documents\prog\proy\personaje_principal.h
+	"character_utils.h"
+
+1749433925 c:\users\patri\documents\prog\proy\character.h
+	"character_collection.h"
+	"item_collection.h"
+	"equipamiento.h"
+
+1747062166 c:\users\patri\documents\prog\proy\item.h
+
+1746965771 source:c:\users\patri\documents\prog\proy\character_stats.c
+	<stdio.h>
+	"character_stats.h"
+
+1747059118 c:\users\patri\documents\prog\proy\character_stats.h
+
+1746961370 c:\users\patri\documents\prog\proy\entity_utils.h
+
+1746963548 c:\users\patri\documents\prog\proy\routes.h
+
+1746898995 source:c:\users\patri\documents\prog\proy\routes.c
+	"routes.h"
+
+1749434091 source:c:\users\patri\documents\prog\proy\character_template.c
+	"character_template.h"
+
+1749064060 c:\users\patri\documents\prog\proy\character_template.h
+	"movement.h"
+	"character_stats.h"
+
+1747125351 c:\users\patri\documents\prog\proy\movement.h
+
+1747047939 source:c:\users\patri\documents\prog\proy\character_model.c
+	"character_model.h"
+	"movement_model.h"
+
+1747048284 c:\users\patri\documents\prog\proy\character_model.h
+	"character_template.h"
+
+1747047912 c:\users\patri\documents\prog\proy\movement_model.h
+	"movement.h"
+
+1747047271 source:c:\users\patri\documents\prog\proy\item.c
+	"item.h"
+
+1749434335 source:c:\users\patri\documents\prog\proy\equipamiento.c
+	"equipamiento.h"
+	"item_collection.h"
+
+1747063873 c:\users\patri\documents\prog\proy\equipamiento.h
+	"item.h"
+
+1747048588 source:c:\users\patri\documents\prog\proy\movement_model.c
+	"movement_collection.h"
+
+1749432065 source:c:\users\patri\documents\prog\proy\character_collection.c
+	"character_collection.h"
+
+1749431848 c:\users\patri\documents\prog\proy\character_collection.h
+	"character_template.h"
+	"movement_collection.h"
+
+1747048574 c:\users\patri\documents\prog\proy\movement_collection.h
+	"movement.h"
+
+1749434079 source:c:\users\patri\documents\prog\proy\character.c
+	"character.h"
+
+1749434253 c:\users\patri\documents\prog\proy\item_collection.h
+	"item.h"
+
+1747125391 source:c:\users\patri\documents\prog\proy\movement_collection.c
+	"movement_collection.h"
+
+1749435836 source:c:\users\patri\documents\prog\proy\item_collection.c
+	"item_collection.h"
+
+1749435798 source:c:\users\patri\documents\prog\proy\character_manager.c
+	"character_manager.h"
+
+1749434059 c:\users\patri\documents\prog\proy\character_manager.h
+	"character.h"
+
