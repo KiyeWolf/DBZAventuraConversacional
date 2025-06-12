@@ -6,13 +6,13 @@
 // Simulación de "sonidos" con textos
 void reproducirSonido(int boton) {
     switch(boton) {
-        case 1: printf("🔴 Sonido agudo!\n");
+        case 1: printf("¡Sonido agudo!\n");
         break;
-        case 2: printf("🟢 Sonido grave!\n");
+        case 2: printf("¡Sonido grave!\n");
         break;
-        case 3: printf("🔵 Sonido metálico!\n");
+        case 3: printf("¡Sonido metálico!\n");
         break;
-        case 4: printf("🟡 Sonido suave!\n");
+        case 4: printf("¡Sonido suave!\n");
         break;
         default: printf("Botón inválido.\n");
     }
@@ -21,7 +21,7 @@ void reproducirSonido(int boton) {
 
 // Mostrar la secuencia original
 void mostrarFrecuencia(int secuencia[], int len) {
-    printf("\n🔁 Reproduciendo secuencia...\n");
+    printf("\nReproduciendo secuencia...\n");
     for(int i = 0; i < len; i++) {
         reproducirSonido(secuencia[i]);
     }
@@ -70,12 +70,14 @@ void sonidista()
         }
 
         if(correcto) {
-            printf("\n✅ ¡Secuencia correcta! Has desbloqueado la esfera.\n");
+            printf("\n ¡Secuencia correcta! Has desbloqueado la esfera.\n");
             Sleep(2000);
             system("cls");
             break;
-        } else {
-            printf("\n❌ Secuencia incorrecta. Inténtalo de nuevo.\n\n");
+        } 
+        else 
+        {
+            printf("\nX Secuencia incorrecta. Inténtalo de nuevo.\n\n");
             Sleep(2000);
             system("cls");
         }
