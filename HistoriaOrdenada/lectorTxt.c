@@ -18,9 +18,12 @@ void leerRespuestaMultiples(int* res, int li, int ls);
 
 void aceptarAyudaEsqueleto(int* esqueleto);
 int investigarRuidos();
+int rodearGolem();
+int perdonarAfreezer();
 
 int main() {
     system("chcp 65001 <nul");
+    int final=0;
    int esqueleto=0;
    cinematica("introduccion.txt");
     cinematica("caminoANamek.txt");
@@ -37,9 +40,10 @@ int main() {
     if(aceptarAyudarAnimales())
     {
         //se inicia un combate [BANDIDOS NAMEK]
+        final++;
         cinematica("siBatallaBandidos.txt");
     }
-
+    
     cinematica("granjaNamek.txt");
 //    se inicia un combate [SOLDADOS BASICOS]
     cinematica("caminoABosqueRojo.txt");
@@ -55,13 +59,14 @@ int main() {
         //combate [BESTIAS DE LA NIEBLA]
     }
     cinematica("caminoPorBosqueRojo.txt");
-    aceptarAyudaEsqueleto(&esqueleto);
+   aceptarAyudaEsqueleto(&esqueleto);
     if(esqueleto)
     {
         cinematica("esqueletoAyuda.txt");
     }
     else
     {
+        final++;
         cinematica("esqueletoNoAyuda.txt");
         //combate [BESTIAS DE LA NIEBLA]
     }
@@ -76,7 +81,7 @@ int main() {
     cinematica("postTemploBosqueRojo.txt");
    // combate [SOLDADOS NORMALES]
     cinematica("postSoldadosBosqueRojo.txt");
-   // Altar(); 
+   // Altar();
    if (investigarRuidos())
     {
         cinematica("ruidosInvestigados.txt");
@@ -88,8 +93,67 @@ int main() {
     sonidista();
 
     cinematica("tercerEsferaOPiccolo.txt");
+
+
+
     cinematica("seUnePiccolo.txt");
-    
+    cinematica("llanurasPrePiccolo.txt");
+    //batalla [SOLDADOS ELITE]
+    cinematica("llanurasPostPiccolo.txt");
+    Altar();
+    cinematica("camaraDeFreezer.txt");
+    cinematica("introLlanuraDeKihel.txt");
+    if(esqueleto)
+    {
+        cinematica("cobrarFavor.txt");
+        //combate []
+    }
+    else{
+        cinematica("cobrarFavorNo.txt");
+    }
+    cinematica("llanuraDeKihel.txt");
+    //combate [SOLDADOS DE VEGGETA]
+    cinematica("preVeggeta.txt");
+    cinematica("postVeggeta.txt");
+    if(!rodearGolem())
+    {
+        cinematica("postGolemBatalla.txt");
+        //combate [GOLEM]
+    }
+    else
+    {
+        final++;
+    }
+    //Altar();
+
+    cinematica("encuentroFuerzasGyu.txt");
+    //combate [Fuerzas Gyu]
+    cinematica("llegadaGoku.txt");
+    //comabate [Frezer]
+
+    cinematica("freezerMataADende.txt");
+    //combate [FreezerGoku]
+    cinematica("freezerPidePerdon.txt");
+
+    if(!perdonarAfreezer())
+    {
+        cinematica("freezerNoPerdonado.txt");
+    }
+    else
+    {
+        final++;
+        cinematica("freezerEsPerdonado.txt");
+    }
+    cinematica("diosesJuzgando.txt");
+    if(final>1)
+    {
+        cinematica("finalBueno.txt");
+    }
+    else
+    {
+        cinematica("finalMalo.txt");
+    }
+    puts("FIN DEL JUEGO");
     return 0;
 }
 int cinematica(char* nombreTxt)
@@ -198,6 +262,20 @@ int investigarRuidos()
 {
     int respuesta;
     puts("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
+    leerPreguntaBooleana(&respuesta);
+    return respuesta;
+}
+int rodearGolem()
+{
+    int respuesta;
+    puts("¿QUIERES RODEAR AL GOLEM?\n1.SI\n0.NO");
+    leerPreguntaBooleana(&respuesta);
+    return respuesta;
+}
+int perdonarAfreezer()
+{
+    int respuesta;
+    puts("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
     leerPreguntaBooleana(&respuesta);
     return respuesta;
 }
