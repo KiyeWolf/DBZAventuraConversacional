@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "sonidos.c"
 #define TODO_OK 0
 #define ERR_LECTURA_ARCH 1
 #define ACEPTADO 1
@@ -16,8 +17,10 @@ int acertijo();
 void leerRespuestaMultiples(int* res, int li, int ls);
 
 void aceptarAyudaEsqueleto(int* esqueleto);
+int investigarRuidos();
 
 int main() {
+    system("chcp 65001 <nul");
    int esqueleto=0;
    cinematica("introduccion.txt");
     cinematica("caminoANamek.txt");
@@ -28,17 +31,17 @@ int main() {
         //En esta parte aparece un Altar
 
 
-        Altar(); //por ahora nose que mandarle
+        //Altar(); //por ahora nose que mandarle
 
     cinematica("caminoAGranja.txt");
     if(aceptarAyudarAnimales())
     {
-        se inicia un combate [BANDIDOS NAMEK]
+        //se inicia un combate [BANDIDOS NAMEK]
         cinematica("siBatallaBandidos.txt");
     }
 
     cinematica("granjaNamek.txt");
-    se inicia un combate [SOLDADOS BASICOS]
+//    se inicia un combate [SOLDADOS BASICOS]
     cinematica("caminoABosqueRojo.txt");
     Altar();
     cinematica("bosqueRojoPreAcertijo.txt");
@@ -69,13 +72,29 @@ int main() {
     //combate [GUARDIAN DEL TEMPLO PRIMER FASE]
     cinematica("temploBosqueRojoGuardianSegundaFase.txt");
     //combate [GUARDIAN DEL TEMPLO SEGUNDA FASE]
-    cinematica("segundaEsfera.txt");
+   cinematica("segundaEsfera.txt");
+    cinematica("postTemploBosqueRojo.txt");
+   // combate [SOLDADOS NORMALES]
+    cinematica("postSoldadosBosqueRojo.txt");
+   // Altar(); 
+   if (investigarRuidos())
+    {
+        cinematica("ruidosInvestigados.txt");
+        //combate [GOLEMS]
+    }
+    cinematica("caminoEsferaBrillante.txt" );
+    //MECANICA DE BOTONES
 
+    sonidista();
+
+    cinematica("tercerEsferaOPiccolo.txt");
+    cinematica("seUnePiccolo.txt");
+    
+    return 0;
 }
 int cinematica(char* nombreTxt)
 {
     FILE *archivo = fopen(nombreTxt, "r");
-    system("chcp 65001 <nul");
     if (archivo == NULL) {
         perror("Error al abrir el archivo");
         return ERR_LECTURA_ARCH;
@@ -174,4 +193,11 @@ void aceptarAyudaEsqueleto(int* esqueleto)
     {
         *esqueleto = RECHAZADO;
     }
+}
+int investigarRuidos()
+{
+    int respuesta;
+    puts("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
+    leerPreguntaBooleana(&respuesta);
+    return respuesta;
 }
