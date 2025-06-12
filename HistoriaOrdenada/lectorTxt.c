@@ -8,7 +8,10 @@
 #define RECHAZADO 0
 
 #define MAX_LINEA 4096
+
+void IniciarSecuencia(int indice, char *secuencias[]);
 void leerPreguntaBooleana(int* res);
+int preguntarYLeerSegunTexto(char* texto);
 int tutorial();
 int aceptarAyudarAnimales();
 int cinematica(char* nombreTxt);
@@ -25,99 +28,155 @@ int main() {
     system("chcp 65001 <nul");
     int final=0;
    int esqueleto=0;
-   cinematica("introduccion.txt");
-    cinematica("caminoANamek.txt");
-    //if (tutorial())
+    char *secuencias[] = {
+        "./ArchivosDeTexto/introduccion.txt",
+        "./ArchivosDeTexto/caminoANamek.txt",
+        "./ArchivosDeTexto/barNamek.txt",
+        "./ArchivosDeTexto/caminoAGranja.txt",
+        "./ArchivosDeTexto/siBatallaBandidos.txt",
+        "./ArchivosDeTexto/granjaNamek.txt",
+        "./ArchivosDeTexto/caminoABosqueRojo.txt",
+        "./ArchivosDeTexto/bosqueRojoPreAcertijo.txt",
+        "./ArchivosDeTexto/acertijoRtaCorrecta.txt",
+        "./ArchivosDeTexto/acertijoRtaIncorrecta.txt",
+        "./ArchivosDeTexto/caminoPorBosqueRojo.txt",
+        "./ArchivosDeTexto/esqueletoAyuda.txt",
+        "./ArchivosDeTexto/esqueletoNoAyuda.txt",
+        "./ArchivosDeTexto/temploBosqueRojo.txt",
+        "./ArchivosDeTexto/temploBosqueRojoGuardianPrimerFase.txt",
+        "./ArchivosDeTexto/temploBosqueRojoGuardianSegundaFase.txt",
+        "./ArchivosDeTexto/segundaEsfera.txt",
+        "./ArchivosDeTexto/postTemploBosqueRojo.txt",
+        "./ArchivosDeTexto/postSoldadosBosqueRojo.txt",
+        "./ArchivosDeTexto/ruidosInvestigados.txt",
+        "./ArchivosDeTexto/caminoEsferaBrillante.txt",
+        "./ArchivosDeTexto/tercerEsferaOPiccolo.txt",
+        "./ArchivosDeTexto/seUnePiccolo.txt",
+        "./ArchivosDeTexto/llanurasPrePiccolo.txt",
+        "./ArchivosDeTexto/llanurasPostPiccolo.txt",
+        "./ArchivosDeTexto/camaraDeFreezer.txt",
+        "./ArchivosDeTexto/introLlanuraDeKihel.txt",
+        "./ArchivosDeTexto/cobrarFavor.txt",
+        "./ArchivosDeTexto/cobrarFavorNo.txt",
+        "./ArchivosDeTexto/llanuraDeKihel.txt",
+        "./ArchivosDeTexto/preVeggeta.txt",
+        "./ArchivosDeTexto/postVeggeta.txt",
+        "./ArchivosDeTexto/postGolemBatalla.txt",
+        "./ArchivosDeTexto/encuentroFuerzasGyu.txt",
+        "./ArchivosDeTexto/llegadaGoku.txt",
+        "./ArchivosDeTexto/freezerMataADende.txt",
+        "./ArchivosDeTexto/freezerPidePerdon.txt",
+        "./ArchivosDeTexto/freezerNoPerdonado.txt",
+        "./ArchivosDeTexto/freezerEsPerdonado.txt",
+        "./ArchivosDeTexto/diosesJuzgando.txt",
+        "./ArchivosDeTexto/finalBueno.txt",
+        "./ArchivosDeTexto/finalMalo.txt"
+    };
+    IniciarSecuencia(0, secuencias);
+    IniciarSecuencia(1, secuencias);
+    // Si el tutorial es necesario, se puede descomentar la siguiente línea
+        //if (tutorial())
         //el combate es con tutorial [LADRONES NAMEK]
         //Puede o no haber combate
-    cinematica("barNamek.txt");
-        //En esta parte aparece un Altar
-
-
-        //Altar(); //por ahora nose que mandarle
-
-    cinematica("caminoAGranja.txt");
+    IniciarSecuencia(2, secuencias);
+    //Altar
+    IniciarSecuencia(3, secuencias);
     if(aceptarAyudarAnimales())
     {
         //se inicia un combate [BANDIDOS NAMEK]
         final++;
-        cinematica("siBatallaBandidos.txt");
+        IniciarSecuencia(4, secuencias);
     }
     
-    cinematica("granjaNamek.txt");
+    IniciarSecuencia(5, secuencias);
 //    se inicia un combate [SOLDADOS BASICOS]
-    cinematica("caminoABosqueRojo.txt");
-    Altar();
-    cinematica("bosqueRojoPreAcertijo.txt");
+    IniciarSecuencia(6, secuencias);
+
+    IniciarSecuencia(7, secuencias);
     if (acertijo())
     {
-        cinematica("acertijoRtaCorrecta.txt");
+        IniciarSecuencia(8, secuencias);
     }
     else
     {
-        cinematica("acertijoRtaIncorrecta.txt");
+        IniciarSecuencia(9, secuencias);
         //combate [BESTIAS DE LA NIEBLA]
     }
-    cinematica("caminoPorBosqueRojo.txt");
+    IniciarSecuencia(10, secuencias);
    aceptarAyudaEsqueleto(&esqueleto);
     if(esqueleto)
     {
-        cinematica("esqueletoAyuda.txt");
+        IniciarSecuencia(11, secuencias);
     }
     else
     {
         final++;
-        cinematica("esqueletoNoAyuda.txt");
+        IniciarSecuencia(12, secuencias);
         //combate [BESTIAS DE LA NIEBLA]
     }
-    cinematica("temploBosqueRojo.txt");
+    IniciarSecuencia(13, secuencias);
+
+
     //Dende se Une a la Party
-    Altar();
-    cinematica("temploBosqueRojoGuardianPrimerFase.txt");
+
+
+    //Altar();
+    IniciarSecuencia(14, secuencias);
     //combate [GUARDIAN DEL TEMPLO PRIMER FASE]
-    cinematica("temploBosqueRojoGuardianSegundaFase.txt");
+    IniciarSecuencia(15, secuencias);
     //combate [GUARDIAN DEL TEMPLO SEGUNDA FASE]
-   cinematica("segundaEsfera.txt");
-    cinematica("postTemploBosqueRojo.txt");
+   IniciarSecuencia(16, secuencias);
+    IniciarSecuencia(17, secuencias);
    // combate [SOLDADOS NORMALES]
-    cinematica("postSoldadosBosqueRojo.txt");
+    IniciarSecuencia(18, secuencias);
+    //combate [SOLDADOS ELITE]
+    IniciarSecuencia(19, secuencias);
+    //combate [GOLEMS]
+    IniciarSecuencia(20, secuencias);
+    IniciarSecuencia(21, secuencias);
+    IniciarSecuencia(22, secuencias);
+
+
+    //Piccolo se une a la Party
+
+
    // Altar();
    if (investigarRuidos())
     {
-        cinematica("ruidosInvestigados.txt");
+        IniciarSecuencia(23, secuencias);
         //combate [GOLEMS]
     }
-    cinematica("caminoEsferaBrillante.txt" );
+    IniciarSecuencia(24, secuencias);
     //MECANICA DE BOTONES
 
     sonidista();
 
-    cinematica("tercerEsferaOPiccolo.txt");
+    IniciarSecuencia(25, secuencias);
 
 
 
-    cinematica("seUnePiccolo.txt");
-    cinematica("llanurasPrePiccolo.txt");
+    IniciarSecuencia(26, secuencias);
+    IniciarSecuencia(27, secuencias);
     //batalla [SOLDADOS ELITE]
-    cinematica("llanurasPostPiccolo.txt");
+    IniciarSecuencia(28, secuencias);
     Altar();
-    cinematica("camaraDeFreezer.txt");
-    cinematica("introLlanuraDeKihel.txt");
+    IniciarSecuencia(29, secuencias);
+    IniciarSecuencia(30, secuencias);
     if(esqueleto)
     {
-        cinematica("cobrarFavor.txt");
+        IniciarSecuencia(31, secuencias);
         //combate []
     }
     else{
-        cinematica("cobrarFavorNo.txt");
+        IniciarSecuencia(32, secuencias);
     }
-    cinematica("llanuraDeKihel.txt");
+    IniciarSecuencia(33, secuencias);
     //combate [SOLDADOS DE VEGGETA]
-    cinematica("preVeggeta.txt");
-    cinematica("postVeggeta.txt");
+    IniciarSecuencia(34, secuencias);
+    IniciarSecuencia(35, secuencias);
     if(!rodearGolem())
     {
-        cinematica("postGolemBatalla.txt");
+        IniciarSecuencia(36, secuencias);
         //combate [GOLEM]
     }
     else
@@ -126,35 +185,48 @@ int main() {
     }
     //Altar();
 
-    cinematica("encuentroFuerzasGyu.txt");
+    IniciarSecuencia(37, secuencias);
+    
+    //Se unio Veggeta a la Party
+
     //combate [Fuerzas Gyu]
-    cinematica("llegadaGoku.txt");
+    IniciarSecuencia(38, secuencias);
     //comabate [Frezer]
 
-    cinematica("freezerMataADende.txt");
+    IniciarSecuencia(39, secuencias);
+
+    //Ya estamos con Gokú
     //combate [FreezerGoku]
-    cinematica("freezerPidePerdon.txt");
+    IniciarSecuencia(40, secuencias);
 
     if(!perdonarAfreezer())
     {
-        cinematica("freezerNoPerdonado.txt");
+        IniciarSecuencia(41, secuencias);
     }
     else
     {
         final++;
-        cinematica("freezerEsPerdonado.txt");
+        IniciarSecuencia(42, secuencias);
     }
-    cinematica("diosesJuzgando.txt");
+    IniciarSecuencia(43, secuencias);
     if(final>1)
     {
-        cinematica("finalBueno.txt");
+        IniciarSecuencia(44, secuencias);
     }
     else
     {
-        cinematica("finalMalo.txt");
+        IniciarSecuencia(45, secuencias);
     }
     puts("FIN DEL JUEGO");
     return 0;
+}
+int preguntarYLeerSegunTexto(char* texto)
+{
+    int respuesta;
+    puts(texto);
+    leerPreguntaBooleana(&respuesta);
+    system("cls");
+    return respuesta;
 }
 int cinematica(char* nombreTxt)
 {
@@ -182,21 +254,7 @@ int cinematica(char* nombreTxt)
     fclose(archivo);
     return TODO_OK;
 }
-int aceptarAyudarAnimales()
-{
-    int respuesta;
-    puts("¿DESEAS INTERVENIR EN LA VIDA DE LOS ANIMALES?\n1.SI\n0.NO");
-    leerPreguntaBooleana(&respuesta);
-    return respuesta;
-}
-int tutorial()
-{
-    //habria que validar el ingreso por teclado no?
-    int respuesta;
-    puts("¿QUIERES SALTEAR EL TUTORIAL?\n1.SI\n0.NO");
-    leerPreguntaBooleana(&respuesta);
-    return respuesta;
-}
+
 void leerPreguntaBooleana(int* res)
 {
     int num;
@@ -246,9 +304,7 @@ void leerRespuestaMultiples(int* res, int li, int ls)
 void aceptarAyudaEsqueleto(int* esqueleto)
 {
     int respuesta;
-    puts("¿CONFIAR EN EL ESQUELETO Y ACEPTAR EL TRATO? \n\n1. Aceptar el trato \n\n0. Rechazarlo y encontrar otro camino\n\n");
-    leerPreguntaBooleana(&respuesta);
-    system("cls");
+    respuesta = preguntarYLeerSegunTexto("¿DESEAS AYUDAR AL ESQUELETO QUE TE PIDE AYUDA? \n\n1. Si \n\n0. No");
     if (respuesta)
     {
         *esqueleto = ACEPTADO;
@@ -258,24 +314,26 @@ void aceptarAyudaEsqueleto(int* esqueleto)
         *esqueleto = RECHAZADO;
     }
 }
+int aceptarAyudarAnimales()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A LOS ANIMALES QUE TE PIDEN AYUDA? \n\n1. Si \n\n0. No");
+}
+int tutorial()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS HACER EL TUTORIAL? \n\n1. Si \n\n0. No");
+}
 int investigarRuidos()
 {
-    int respuesta;
-    puts("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
-    leerPreguntaBooleana(&respuesta);
-    return respuesta;
+    return preguntarYLeerSegunTexto("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
 }
 int rodearGolem()
 {
-    int respuesta;
-    puts("¿QUIERES RODEAR AL GOLEM?\n1.SI\n0.NO");
-    leerPreguntaBooleana(&respuesta);
-    return respuesta;
+    return preguntarYLeerSegunTexto("¿QUIERES RODEAR AL GOLEM?\n1.SI\n0.NO");
 }
 int perdonarAfreezer()
 {
-    int respuesta;
-    puts("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
-    leerPreguntaBooleana(&respuesta);
-    return respuesta;
+    return preguntarYLeerSegunTexto("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
+}
+void IniciarSecuencia(int indice, char *secuencias[]) {
+    cinematica(secuencias[indice]);
 }
