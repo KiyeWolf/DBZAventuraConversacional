@@ -7,7 +7,8 @@
 
 typedef struct {
     unsigned int cantidad;
-    t_character personajes_arr[PARTY_MAX];
+    unsigned int id[PARTY_MAX];
+    t_character* personajes_arr[PARTY_MAX];
 }t_party_manager;
 
 

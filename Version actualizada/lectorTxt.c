@@ -1,15 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "sonidos.c"
+#define TODO_OK 0
+#define ERR_LECTURA_ARCH 1
+#define ACEPTADO 1
+#define RECHAZADO 0
 
-#include "character_manager.h"
-#include "MENU.h"
+#define MAX_LINEA 4096
 
-int main()
-{
-   system("chcp 65001 <nul");
+void IniciarSecuencia(int indice, char *secuencias[]);
+void leerPreguntaBooleana(int* res);
+int preguntarYLeerSegunTexto(char* texto);
+int tutorial();
+int aceptarAyudarAnimales();
+int cinematica(char* nombreTxt);
+void Altar();
+int acertijo();
+void leerRespuestaMultiples(int* res, int li, int ls);
+
+void aceptarAyudaEsqueleto(int* esqueleto);
+int investigarRuidos();
+int rodearGolem();
+int perdonarAfreezer();
+
+int main() {
+    system("chcp 65001 <nul");
+
+
+
     int final=0;
-   int esqueleto=0;
+    int esqueleto=0;
+
+
+
     char *secuencias[] = {
+
         "./ArchivosDeTexto/introduccion.txt",
         "./ArchivosDeTexto/caminoANamek.txt",
         "./ArchivosDeTexto/barNamek.txt",
@@ -55,7 +81,7 @@ int main()
     };
     IniciarSecuencia(0, secuencias);
     IniciarSecuencia(1, secuencias);
-    // Si el tutorial es necesario, se puede descomentar la siguiente l�nea
+    // Si el tutorial es necesario, se puede descomentar la siguiente línea
         //if (tutorial())
         //el combate es con tutorial [LADRONES NAMEK]
         //Puede o no haber combate
@@ -176,7 +202,7 @@ int main()
 
     IniciarSecuencia(39, secuencias);
 
-    //Ya estamos con Gok�
+    //Ya estamos con Gokú
     //combate [FreezerGoku]
     IniciarSecuencia(40, secuencias);
 
@@ -201,80 +227,122 @@ int main()
     puts("FIN DEL JUEGO");
     return 0;
 }
+int preguntarYLeerSegunTexto(char* texto)
+{
+    int respuesta;
+    puts(texto);
+    leerPreguntaBooleana(&respuesta);
+    system("cls");
+    return respuesta;
+}
 
+int cinematica(char* nombreTxt)
+{
+    FILE *archivo = fopen(nombreTxt, "r");
+    if (archivo == NULL) {
+        perror("Error al abrir el archivo");
+        return ERR_LECTURA_ARCH;
+    }
 
+    char linea[MAX_LINEA];
 
+    while (fgets(linea, sizeof(linea), archivo)) {
+        // Eliminar el salto de línea final si lo hubiera
+        linea[strcspn(linea, "\n")] = 0;
 
+        // Separar por el delimitador "|"
+        char *fragmento = strtok(linea, "|");
+        while (fragmento != NULL) {
+            printf("\n\n%s\n\n", fragmento);
+            system("pause");
+            system("cls");
+            fragmento = strtok(NULL, "|");
+        }
+    }
+    fclose(archivo);
+    return TODO_OK;
+}
 
-    /*
-    t_character_manager personajes;
+void leerPreguntaBooleana(int* res)
+{
+    int num;
+    scanf("%d",&num);
+    while(num!=0 && num!=1)
+    {
+        puts("Error");
+        scanf("%d",&num);
+    }
+    *res = num;
+}
 
-    inicializar_personajes(&personajes);
-
-    printf("NOMBRE %s\n", personajes.personajes_arr[0].personaje_template.NAME);
-    printf("HP ACUTAL %d\n", personajes.personajes_arr[0].HP_actual);
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    recibir_ataque(&personajes.personajes_arr[0], 15);
-    printf("RECIBE DA�O %d\n", personajes.personajes_arr[0].HP_actual);
-
-    curar_personaje(&personajes.personajes_arr[0], 13);
-    printf("SE CURA %d\n", personajes.personajes_arr[0].HP_actual);
-
-    personajes.personajes_arr[0].HP_actual = 0;
-    resucitar_personaje(&personajes.personajes_arr[0]);
-    printf("RESUCITA %d\n", personajes.personajes_arr[0].HP_actual);
-
-    printf("ATACA %d\n", atacar_enemigo(&personajes.personajes_arr[0]));
-
-    printf("TIENE ENERGIA %d\n", personajes.personajes_arr[0].ENERGY_actual);
-    printf("CD %d\n", personajes.personajes_arr[0].personaje_template.MOVS[0].CD);
-    printf("CD COUNTER %d\n", personajes.personajes_arr[0].status.CD_counter[0]);
-    printf("ESTA DESBLOQUEADO %d\n", personajes.personajes_arr[0].status.movement_unlocked_flag[0]);
-    printf("UTILIZA MOVIMIENTO %s %d\n", personajes.personajes_arr[0].personaje_template.MOVS[0].NAME ,utilizar_movimiento(&personajes.personajes_arr[0], 0));
-
-    desbloquear_movimiento(&personajes.personajes_arr[0], 0);
-    printf("ESTA DESBLOQUEADO %d\n", personajes.personajes_arr[0].status.movement_unlocked_flag[0]);
-    printf("CD %d\n", personajes.personajes_arr[0].personaje_template.MOVS[0].CD);
-    printf("CD COUNTER %d\n", personajes.personajes_arr[0].status.CD_counter[0]);
-    printf("UTILIZA MOVIMIENTO %s %d\n", personajes.personajes_arr[0].personaje_template.MOVS[0].NAME ,utilizar_movimiento(&personajes.personajes_arr[0], 0));
-    printf("TIENE ENERGIA %d\n", personajes.personajes_arr[0].ENERGY_actual);
-
-    printf("ACTIVACION %d\n", cambiar_estado_por_id(&personajes, GOKU, 1));
-    printf("ACTIVADO %d\n", personajes.flags_de_personajes_desbloqueados[0]);
-    printf("ITEM 0 ID %d NOMBRE %s\n", personajes.personajes_arr[0].equipo.items[0].id, personajes.personajes_arr[0].equipo.items[0].NAME);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d\n", agregar_item_manager(&personajes, GOKU, BOTAS));
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-
-    printf("ITEM 0 ID %d NOMBRE %s\n", personajes.personajes_arr[0].equipo.items[0].id, personajes.personajes_arr[0].equipo.items[0].NAME);
-
-
-    printf("ITEM 0 ID %d NOMBRE %s\n", personajes.personajes_arr[0].equipo.items[0].id, personajes.personajes_arr[0].equipo.items[0].NAME);
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d, CANTIDAD %d\n", remover_item_manager(&personajes, GOKU, BOTAS), personajes.personajes_arr[0].equipo.cantidad);
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d, CANTIDAD %d\n", remover_item_manager(&personajes, GOKU, BOTAS), personajes.personajes_arr[0].equipo.cantidad);
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d, CANTIDAD %d\n", remover_item_manager(&personajes, GOKU, BOTAS), personajes.personajes_arr[0].equipo.cantidad);
-    printf("TIENE ARMADURA %d\n", personajes.personajes_arr[0].ARMOR);
-    printf("RESULTADO %d, CANTIDAD %d\n", remover_item_manager(&personajes, GOKU, BOTAS), personajes.personajes_arr[0].equipo.cantidad);
-
-    descansar_manager(&personajes);
-
-    getchar();
-    */
+void Altar()
+{
+    cinematica("AltarDeGuardado.txt");
+    puts("¿Qué deseás hacer? \n 1. Guardar Progreso \n 2. Recuperar Energía \n 3. Organizar Equipo \n 0. Salir ");
+}
+int acertijo()
+{
+    int respuesta;
+    puts("\"Soy lo que es, lo que fue y lo que vendrá. \n Divídeme y me multiplicaré. \n Olvidame, y jamás podrás cruzar.¿Qué soy? \"\n");
+    system("pause");
+    system("cls");
+    puts("\"Soy lo que es, lo que fue y lo que vendrá. \n Divídeme y me multiplicaré. \n Olvidame, y jamás podrás cruzar.¿Qué soy? \"\n");
+    puts("1) El tiempo \n 2) El silencio \n 3) El conocimiento \n 4) El poder");
+    leerRespuestaMultiples(&respuesta, 1, 4);
+    system("cls");
+    if (respuesta!=3)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
+void leerRespuestaMultiples(int* res, int li, int ls)
+{
+    int num;
+    scanf("%d",&num);
+    while(num<li || num>ls)
+    {
+        puts("Error");
+        scanf("%d",&num);
+    }
+    *res = num;
+}
+void aceptarAyudaEsqueleto(int* esqueleto)
+{
+    int respuesta;
+    respuesta = preguntarYLeerSegunTexto("¿DESEAS AYUDAR AL ESQUELETO QUE TE PIDE AYUDA? \n\n1. Si \n\n0. No");
+    if (respuesta)
+    {
+        *esqueleto = ACEPTADO;
+    }
+    else
+    {
+        *esqueleto = RECHAZADO;
+    }
+}
+int aceptarAyudarAnimales()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A LOS ANIMALES QUE TE PIDEN AYUDA? \n\n1. Si \n\n0. No");
+}
+int tutorial()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS HACER EL TUTORIAL? \n\n1. Si \n\n0. No");
+}
+int investigarRuidos()
+{
+    return preguntarYLeerSegunTexto("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
+}
+int rodearGolem()
+{
+    return preguntarYLeerSegunTexto("¿QUIERES RODEAR AL GOLEM?\n1.SI\n0.NO");
+}
+int perdonarAfreezer()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
+}
+void IniciarSecuencia(int indice, char *secuencias[]) {
+    cinematica(secuencias[indice]);
+}
