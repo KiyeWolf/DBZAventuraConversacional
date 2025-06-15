@@ -1,6 +1,6 @@
 
 #include <windows.h> // Para Sleep
-
+#include <stdio.h>
 #define MAX_LEN 5
 
 // Simulación de "sonidos" con textos
@@ -28,7 +28,7 @@ void mostrarFrecuencia(int secuencia[], int len) {
     printf("\n");
 }
 
-void sonidista()
+void juegoDeSonidosYColores()
 {
     int secuencia[MAX_LEN] = {1, 1, 3, 4, 2}; // se puede cambiar la  secuencia aca
     int entrada[MAX_LEN];
@@ -74,8 +74,8 @@ void sonidista()
             Sleep(2000);
             system("cls");
             break;
-        } 
-        else 
+        }
+        else
         {
             printf("\nX Secuencia incorrecta. Inténtalo de nuevo.\n\n");
             Sleep(2000);

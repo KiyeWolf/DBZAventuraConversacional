@@ -1,77 +1,62 @@
+#include "sonidos.c"
+#include "narrativaHeader.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "sonidos.c"
-#define TODO_OK 0
-#define ERR_LECTURA_ARCH 1
-#define ACEPTADO 1
-#define RECHAZADO 0
-
-#define MAX_LINEA 4096
-
-void IniciarSecuencia(int indice, char *secuencias[]);
-void leerPreguntaBooleana(int* res);
-int preguntarYLeerSegunTexto(char* texto);
-int tutorial();
-int aceptarAyudarAnimales();
-int cinematica(char* nombreTxt);
-void Altar();
-int acertijo();
-void leerRespuestaMultiples(int* res, int li, int ls);
-
-void aceptarAyudaEsqueleto(int* esqueleto);
-int investigarRuidos();
-int rodearGolem();
-int perdonarAfreezer();
-
 int main() {
-    system("chcp 65001 <nul");
+
     int final=0;
    int esqueleto=0;
     char *secuencias[] = {
-        "./ArchivosDeTexto/introduccion.txt",
-        "./ArchivosDeTexto/caminoANamek.txt",
-        "./ArchivosDeTexto/barNamek.txt",
-        "./ArchivosDeTexto/caminoAGranja.txt",
-        "./ArchivosDeTexto/siBatallaBandidos.txt",
-        "./ArchivosDeTexto/granjaNamek.txt",
-        "./ArchivosDeTexto/caminoABosqueRojo.txt",
-        "./ArchivosDeTexto/bosqueRojoPreAcertijo.txt",
-        "./ArchivosDeTexto/acertijoRtaCorrecta.txt",
-        "./ArchivosDeTexto/acertijoRtaIncorrecta.txt",
-        "./ArchivosDeTexto/caminoPorBosqueRojo.txt",
-        "./ArchivosDeTexto/esqueletoAyuda.txt",
-        "./ArchivosDeTexto/esqueletoNoAyuda.txt",
-        "./ArchivosDeTexto/temploBosqueRojo.txt",
-        "./ArchivosDeTexto/temploBosqueRojoGuardianPrimerFase.txt",
-        "./ArchivosDeTexto/temploBosqueRojoGuardianSegundaFase.txt",
-        "./ArchivosDeTexto/segundaEsfera.txt",
-        "./ArchivosDeTexto/postTemploBosqueRojo.txt",
-        "./ArchivosDeTexto/postSoldadosBosqueRojo.txt",
-        "./ArchivosDeTexto/ruidosInvestigados.txt",
-        "./ArchivosDeTexto/caminoEsferaBrillante.txt",
-        "./ArchivosDeTexto/tercerEsferaOPiccolo.txt",
-        "./ArchivosDeTexto/seUnePiccolo.txt",
-        "./ArchivosDeTexto/llanurasPrePiccolo.txt",
-        "./ArchivosDeTexto/llanurasPostPiccolo.txt",
-        "./ArchivosDeTexto/camaraDeFreezer.txt",
-        "./ArchivosDeTexto/introLlanuraDeKihel.txt",
-        "./ArchivosDeTexto/cobrarFavor.txt",
-        "./ArchivosDeTexto/cobrarFavorNo.txt",
-        "./ArchivosDeTexto/llanuraDeKihel.txt",
-        "./ArchivosDeTexto/preVeggeta.txt",
-        "./ArchivosDeTexto/postVeggeta.txt",
-        "./ArchivosDeTexto/postGolemBatalla.txt",
-        "./ArchivosDeTexto/encuentroFuerzasGyu.txt",
-        "./ArchivosDeTexto/llegadaGoku.txt",
-        "./ArchivosDeTexto/freezerMataADende.txt",
-        "./ArchivosDeTexto/freezerPidePerdon.txt",
-        "./ArchivosDeTexto/freezerNoPerdonado.txt",
-        "./ArchivosDeTexto/freezerEsPerdonado.txt",
-        "./ArchivosDeTexto/diosesJuzgando.txt",
-        "./ArchivosDeTexto/finalBueno.txt",
-        "./ArchivosDeTexto/finalMalo.txt"
+        "./ArchivosDeTexto/introduccion.txt", //00
+        "./ArchivosDeTexto/caminoANamek.txt", //01
+        "./ArchivosDeTexto/barNamek.txt", //02
+        "./ArchivosDeTexto/caminoAGranja.txt", //03
+        "./ArchivosDeTexto/siBatallaBandidos.txt", //04
+        "./ArchivosDeTexto/granjaNamek.txt", //05
+        "./ArchivosDeTexto/caminoABosqueRojo.txt", //06
+        "./ArchivosDeTexto/bosqueRojoPreAcertijo.txt", //07
+        "./ArchivosDeTexto/acertijoRtaCorrecta.txt", //08
+        "./ArchivosDeTexto/acertijoRtaIncorrecta.txt", //09
+        "./ArchivosDeTexto/caminoPorBosqueRojo.txt", //10
+        "./ArchivosDeTexto/esqueletoAyuda.txt", //11
+        "./ArchivosDeTexto/esqueletoNoAyuda.txt", //12
+        "./ArchivosDeTexto/temploBosqueRojo.txt", //13
+        "./ArchivosDeTexto/temploBosqueRojoGuardianPrimerFase.txt", //14
+        "./ArchivosDeTexto/temploBosqueRojoGuardianSegundaFase.txt", //15
+        "./ArchivosDeTexto/segundaEsfera.txt", //16
+        "./ArchivosDeTexto/postTemploBosqueRojo.txt", //17
+        "./ArchivosDeTexto/postSoldadosBosqueRojo.txt", //18
+        "./ArchivosDeTexto/ruidosInvestigados.txt", //19
+        "./ArchivosDeTexto/caminoEsferaBrillante.txt", //20
+        "./ArchivosDeTexto/tercerEsfera.txt", //21
+        "./ArchivosDeTexto/seUnePiccolo.txt", //22
+        "./ArchivosDeTexto/llanurasPrePiccolo.txt", //23
+        "./ArchivosDeTexto/llanurasPostPiccolo.txt", //24
+        "./ArchivosDeTexto/camaraDeFreezer.txt", //25
+        "./ArchivosDeTexto/introLlanuraDeKihel.txt", //26
+        "./ArchivosDeTexto/cobrarFavor.txt", //27
+        "./ArchivosDeTexto/PostCobrarFavor.txt", //28
+        "./ArchivosDeTexto/cobrarFavorNo.txt", //29
+        "./ArchivosDeTexto/llanuraDeKihel.txt", //30
+        "./ArchivosDeTexto/gokuEnLaNave.txt", //31
+        "./ArchivosDeTexto/encuentroVeggeta.txt", //32
+        "./ArchivosDeTexto/preVeggeta.txt", //33
+        "./ArchivosDeTexto/postVeggeta.txt", //34
+        "./ArchivosDeTexto/ayudasteAVegeta.txt", //35
+        "./ArchivosDeTexto/noAyudasteAVegeta.txt", //36
+        "./ArchivosDeTexto/salidaDeLlanura.txt", //37
+        "./ArchivosDeTexto/postGolemBatalla.txt", //38
+        "./ArchivosDeTexto/encuentroFuerzasGyu.txt", //39
+        "./ArchivosDeTexto/llegadaGoku.txt", //40
+        "./ArchivosDeTexto/freezerMataADende.txt", //41
+        "./ArchivosDeTexto/freezerPidePerdon.txt", //42
+        "./ArchivosDeTexto/freezerNoPerdonado.txt", //43
+        "./ArchivosDeTexto/freezerEsPerdonado.txt", //44
+        "./ArchivosDeTexto/diosesJuzgando.txt", //45
+        "./ArchivosDeTexto/finalBueno.txt", //46
+        "./ArchivosDeTexto/finalMalo.txt" //47
     };
+    system("chcp 65001 >nul");
     IniciarSecuencia(0, secuencias);
     IniciarSecuencia(1, secuencias);
     // Si el tutorial es necesario, se puede descomentar la siguiente línea
@@ -87,7 +72,7 @@ int main() {
         final++;
         IniciarSecuencia(4, secuencias);
     }
-    
+
     IniciarSecuencia(5, secuencias);
 //    se inicia un combate [SOLDADOS BASICOS]
     IniciarSecuencia(6, secuencias);
@@ -127,98 +112,119 @@ int main() {
     //combate [GUARDIAN DEL TEMPLO SEGUNDA FASE]
    IniciarSecuencia(16, secuencias);
     IniciarSecuencia(17, secuencias);
-   // combate [SOLDADOS NORMALES]
+   // combate [SOLDADOS ELITE]
     IniciarSecuencia(18, secuencias);
-    //combate [SOLDADOS ELITE]
-    IniciarSecuencia(19, secuencias);
-    //combate [GOLEMS]
-    IniciarSecuencia(20, secuencias);
-    IniciarSecuencia(21, secuencias);
-    IniciarSecuencia(22, secuencias);
-
-
-    //Piccolo se une a la Party
-
-
-   // Altar();
-   if (investigarRuidos())
+    if(investigarRuidos())
     {
-        IniciarSecuencia(23, secuencias);
+        IniciarSecuencia(19, secuencias);
         //combate [GOLEMS]
     }
+    else
+    {
+        final++;
+    }
+
+    IniciarSecuencia(20, secuencias);
+
+    juegoDeSonidosYColores();
+
+    IniciarSecuencia(21, secuencias);
+
+    IniciarSecuencia(22, secuencias);
+   // Altar();
+
+    IniciarSecuencia(23, secuencias);
+    //combate [SOLDADOS DE FREEZER]
+    
+        //combate [GOLEMS]
     IniciarSecuencia(24, secuencias);
     //MECANICA DE BOTONES
 
-    sonidista();
+    
 
     IniciarSecuencia(25, secuencias);
 
-
+    // Altar();
 
     IniciarSecuencia(26, secuencias);
-    IniciarSecuencia(27, secuencias);
-    //batalla [SOLDADOS ELITE]
-    IniciarSecuencia(28, secuencias);
-    Altar();
-    IniciarSecuencia(29, secuencias);
-    IniciarSecuencia(30, secuencias);
-    if(esqueleto)
+    if (esqueleto)
     {
-        IniciarSecuencia(31, secuencias);
-        //combate []
+        IniciarSecuencia(27, secuencias);
+        //combate [BANDIDOS NAMEK]
+        IniciarSecuencia(28, secuencias);
     }
-    else{
-        IniciarSecuencia(32, secuencias);
+    else
+    {
+        final++;
+        IniciarSecuencia(29, secuencias);
     }
+    IniciarSecuencia(30, secuencias);
+    IniciarSecuencia(31, secuencias);
+    IniciarSecuencia(32, secuencias);
+        //combate [FUERZAS DE VEGGETA]
+
     IniciarSecuencia(33, secuencias);
-    //combate [SOLDADOS DE VEGGETA]
+    //Combate [VEGGETA]
+
     IniciarSecuencia(34, secuencias);
-    IniciarSecuencia(35, secuencias);
-    if(!rodearGolem())
+    if(ayudarAVegeta())
+    {
+        final++;
+        IniciarSecuencia(35, secuencias);
+        //combate [VEGGETA]
+    }
+    else
     {
         IniciarSecuencia(36, secuencias);
+    }
+    IniciarSecuencia(37, secuencias);
+
+
+    if(!rodearGolem())
+    {
+        IniciarSecuencia(38, secuencias);
         //combate [GOLEM]
     }
     else
     {
         final++;
     }
-    //Altar();
-
-    IniciarSecuencia(37, secuencias);
     
+    //Altar();
+    IniciarSecuencia(39, secuencias);
+
     //Se unio Veggeta a la Party
 
     //combate [Fuerzas Gyu]
-    IniciarSecuencia(38, secuencias);
-    //comabate [Frezer]
-
-    IniciarSecuencia(39, secuencias);
-
+    IniciarSecuencia(40, secuencias);
     //Ya estamos con Gokú
     //combate [FreezerGoku]
-    IniciarSecuencia(40, secuencias);
 
-    if(!perdonarAfreezer())
-    {
-        IniciarSecuencia(41, secuencias);
-    }
-    else
-    {
-        final++;
-        IniciarSecuencia(42, secuencias);
-    }
-    IniciarSecuencia(43, secuencias);
-    if(final>1)
+    IniciarSecuencia(41, secuencias);
+    //Golú evoluciona
+    //combate [FreezerGokú]
+    IniciarSecuencia(42, secuencias);
+    
+    if(perdonarAfreezer())
     {
         IniciarSecuencia(44, secuencias);
     }
     else
     {
-        IniciarSecuencia(45, secuencias);
+        final++;
+        IniciarSecuencia(43, secuencias);
+    }
+    IniciarSecuencia(45, secuencias);
+    if(final>1)
+    {
+        IniciarSecuencia(46, secuencias);
+    }
+    else
+    {
+        IniciarSecuencia(47, secuencias);
     }
     puts("FIN DEL JUEGO");
-    return 0;
+
 }
 int preguntarYLeerSegunTexto(char* texto)
 {
@@ -336,4 +342,8 @@ int perdonarAfreezer()
 }
 void IniciarSecuencia(int indice, char *secuencias[]) {
     cinematica(secuencias[indice]);
+}
+int ayudarAVegeta()
+{
+  return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A VEGGETA? \n\n1. Si \n\n0. No");
 }
