@@ -124,7 +124,7 @@ int ayudarAVegeta()
 {
   return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A VEGGETA? \n\n1. Si \n\n0. No");
 }
-char* devolverNombreDeArchSegunCodigo(int codigo_linea, narrativa historia) {
+char* devolverNombreDeArchSegunCodigo(int codigo_linea) {
     FILE* archivo = fopen("Ruta.txt", "r");
     if (!archivo) {
         puts("No se pudo abrir el archivo");
