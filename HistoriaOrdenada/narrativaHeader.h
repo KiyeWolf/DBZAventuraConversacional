@@ -11,9 +11,13 @@
 #define ACEPTADO 1
 #define RECHAZADO 0
 
+typedef
+struct{
+    int decisionesQueAfectanAlFinal[6]={0, 0, 0, 0, 0, 0};
+} narrativa;
 
 void HistoriaCompleta();
-void IniciarSecuencia(int indice, char *secuencias[]);
+char* devolverNombreDeArchSegunCodigo(int codigo_linea, narrativa historia);
 void leerPreguntaBooleana(int* res);
 int preguntarYLeerSegunTexto(char* texto);
 int tutorial();
