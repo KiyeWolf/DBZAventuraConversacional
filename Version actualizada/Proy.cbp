@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="GameManager.h" />
+		<Unit filename="MENU.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MENU.h" />
 		<Unit filename="character.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -51,11 +56,23 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="character_template.h" />
+		<Unit filename="cutscene.h" />
+		<Unit filename="enemy.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="enemy.h" />
 		<Unit filename="equipamiento.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="equipamiento.h" />
+		<Unit filename="game_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_manager.h" />
+		<Unit filename="inventario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="inventario.h" />
 		<Unit filename="item.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -64,14 +81,25 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="item_collection.h" />
+		<Unit filename="lectorTxt.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="movement.h" />
+		<Unit filename="nodo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nodo.h" />
+		<Unit filename="nodo_values.h" />
 		<Unit filename="party.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="party.h" />
+		<Unit filename="sonidos.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

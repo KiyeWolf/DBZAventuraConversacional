@@ -1,0 +1,11 @@
+#ifndef CUTSCENE_H_INCLUDED
+#define CUTSCENE_H_INCLUDED
+
+#define MAX_CUSTCENE_BUFF 1024
+
+typedef struct {
+    char TEXTO_INICIAL[MAX_CUSTCENE_BUFF];
+    char TEXTO_FINAL[MAX_CUSTCENE_BUFF];
+}t_texto_cutscene;
+
+#endif // CUTSCENE_H_INCLUDED

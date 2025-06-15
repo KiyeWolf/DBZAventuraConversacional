@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1749681781 source:c:\users\patri\documents\prog\proy\main.c
+1749767425 source:c:\users\patri\documents\prog\proy\main.c
 	<stdio.h>
 	<stdlib.h>
 	"character_manager.h"
+	"MENU.h"
 
-1749058824 c:\users\patri\documents\prog\proy\enemy.h
+1749767482 c:\users\patri\documents\prog\proy\enemy.h
 	"movement.h"
 
 1746884722 c:\users\patri\documents\prog\proy\character_utils.h
@@ -60,7 +61,7 @@
 1747047271 source:c:\users\patri\documents\prog\proy\item.c
 	"item.h"
 
-1749681426 source:c:\users\patri\documents\prog\proy\equipamiento.c
+1749682112 source:c:\users\patri\documents\prog\proy\equipamiento.c
 	"equipamiento.h"
 	"item_collection.h"
 	<stdio.h>
@@ -74,9 +75,8 @@
 1749674439 source:c:\users\patri\documents\prog\proy\character_collection.c
 	"character_collection.h"
 
-1749431848 c:\users\patri\documents\prog\proy\character_collection.h
+1749767470 c:\users\patri\documents\prog\proy\character_collection.h
 	"character_template.h"
-	"movement_collection.h"
 
 1747048574 c:\users\patri\documents\prog\proy\movement_collection.h
 	"movement.h"
@@ -100,4 +100,15 @@
 
 1749680727 c:\users\patri\documents\prog\proy\character_manager.h
 	"character.h"
+
+1746780109 c:\users\patri\documents\prog\proy\menu.h
+
+1749767391 source:c:\users\patri\documents\prog\proy\menu.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"MENU.h"
+
+1749767494 source:c:\users\patri\documents\prog\proy\enemy.c
+	"enemy.h"
 

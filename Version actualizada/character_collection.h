@@ -2,7 +2,6 @@
 #define CHARACTER_COLLECTION_H_INCLUDED
 
 #include "character_template.h"
-#include "movement_collection.h"
 
 enum e_character_id{
     GOKU,
