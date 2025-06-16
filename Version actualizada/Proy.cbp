@@ -31,7 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="GameManager.h" />
 		<Unit filename="MENU.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -61,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="enemy.h" />
+		<Unit filename="enemy_collection.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="enemy_collection.h" />
 		<Unit filename="equipamiento.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -81,13 +84,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="item_collection.h" />
-		<Unit filename="lectorTxt.c">
+		<Unit filename="lector_de_texto.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="lector_de_texto.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="movement.h" />
+		<Unit filename="movement_collection.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="movement_collection.h" />
 		<Unit filename="nodo.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -97,9 +105,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="party.h" />
-		<Unit filename="sonidos.c">
+		<Unit filename="texto_condicionales.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="texto_condicionales.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

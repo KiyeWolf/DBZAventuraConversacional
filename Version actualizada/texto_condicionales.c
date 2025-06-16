@@ -1,3 +1,7 @@
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "texto_condicionales.h"
 #include "lector_de_texto.h"
 

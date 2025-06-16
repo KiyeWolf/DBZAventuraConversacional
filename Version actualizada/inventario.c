@@ -23,7 +23,7 @@ unsigned int guardar_item (t_inventory* inventario,
 
 }
 
-unsigned int remover_item (t_inventory* inventario,
+unsigned int remover_item_inventario (t_inventory* inventario,
                            unsigned int pos)
 {
     if(inventario->cantidad_de_ocupados_inventario <= 0)

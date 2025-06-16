@@ -77,9 +77,6 @@ unsigned int inicializar_personaje(t_character* personaje,
     if(resultado.estado_del_retorno == 0)
         return 1;
     personaje->status.ID            = id;
-    personaje->status.XP            = 0;
-    personaje->status.LVL           = 1;
-    personaje->status.LVL           = 1;
     personaje->personaje_template   = resultado.retorno;
     inicializar_movimientos(personaje);
     inicializar_equipamiento(&personaje->equipo);

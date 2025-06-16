@@ -27,11 +27,6 @@ unsigned int recibir_ataque_enemigo(t_enemy_stats* enemigo,
     return enemigo->HP;
 }
 
-unsigned int devolver_experiencia (t_enemy_stats* enemigo)
-{
-    return enemigo->XP;
-}
-
 unsigned int atacar_personaje(t_enemy_stats* enemigo)
 {
     return enemigo->ATK;

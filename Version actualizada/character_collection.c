@@ -15,7 +15,7 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
         }
-    }
+    },
     {
         GOHAN,
         "GOHAN",
@@ -28,7 +28,9 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Kame Hame Ha", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
-        },
+        }
+    },
+    {
         KRILLIN,
         "KRILLIN",
         {
@@ -40,7 +42,9 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Kame Hame Ha", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
-        },
+        }
+    },
+    {
         VEGETA,
         "VEGETA",
         {
@@ -52,7 +56,9 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Resplandor final", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
-        },
+        }
+    },
+    {
         PICCOLO,
         "PICCOLO",
         {
@@ -64,7 +70,21 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Makankosappo", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
+        }
+    },
+    {
+        GOKU_SSJ,
+        "GOKU SSJ",
+        {
+            900, 100, 70, 30, 13.0f
         },
+        4,
+        {
+            { "Kame Hame Ha", 170, 2, 2 },
+            { "Genki Dama", 300, 20, 10 },
+            { "Ataque rapido", 80, 1, 1 },
+            { "Carga", 100, 2, 1 }
+        }
     }
 };
 t_retorno_template devolver_template_por_id(unsigned int id)

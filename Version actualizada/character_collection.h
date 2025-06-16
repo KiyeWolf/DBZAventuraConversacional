@@ -9,6 +9,7 @@ enum e_character_id{
     KRILLIN,
     VEGETA,
     PICCOLO,
+    GOKU_SSJ,
     CANTIDAD_DE_PERSONAJES
 };
 

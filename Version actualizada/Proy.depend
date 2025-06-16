@@ -112,3 +112,135 @@
 1749767494 source:c:\users\patri\documents\prog\proy\enemy.c
 	"enemy.h"
 
+1749680705 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_manager.c
+	"character_manager.h"
+	<stdio.h>
+
+1749680727 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_manager.h
+	"character.h"
+
+1750041464 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character.h
+	"character_collection.h"
+	"item_collection.h"
+	"equipamiento.h"
+
+1750044082 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_collection.h
+	"character_template.h"
+
+1749064060 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_template.h
+	"movement.h"
+	"character_stats.h"
+
+1747125351 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\movement.h
+
+1747059118 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_stats.h
+
+1749434253 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item_collection.h
+	"item.h"
+
+1749675818 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item.h
+
+1749680645 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\equipamiento.h
+	"item.h"
+
+1746965771 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_stats.c
+	<stdio.h>
+	"character_stats.h"
+
+1749434091 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_template.c
+	"character_template.h"
+
+1749682112 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\equipamiento.c
+	"equipamiento.h"
+	"item_collection.h"
+	<stdio.h>
+
+1747047271 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item.c
+	"item.h"
+
+1749676105 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item_collection.c
+	"item_collection.h"
+
+1749767391 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\menu.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"MENU.h"
+
+1746780109 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\menu.h
+
+1747125391 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\movement_collection.c
+	"movement_collection.h"
+
+1747048574 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\movement_collection.h
+	"movement.h"
+
+1749432232 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\party.c
+	"party.h"
+
+1750034056 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\party.h
+	"character.h"
+
+1750041504 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character.c
+	"character.h"
+	<stdio.h>
+
+1750041539 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\enemy.c
+	"enemy.h"
+
+1750044254 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\enemy.h
+	"movement.h"
+
+1749769692 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\game_manager.c
+	"game_manager.h"
+
+1749769664 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\game_manager.h
+
+1750044475 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\inventario.c
+	"inventario.h"
+
+1750044479 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\inventario.h
+	"item_collection.h"
+
+1750044068 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\character_collection.c
+	"character_collection.h"
+
+1750097849 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\enemy_collection.c
+	"enemy_collection.h"
+
+1750097882 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\enemy_collection.h
+	"enemy.h"
+
+1750044301 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\lector_de_texto.c
+	"lector_de_texto.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1750032747 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\lector_de_texto.h
+
+1750099142 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\nodo.c
+	<stdio.h>
+	"nodo.h"
+
+1750098359 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\nodo.h
+	"party.h"
+	"enemy_collection.h"
+
+1750099441 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\main.c
+	<stdio.h>
+	<stdlib.h>
+	"character_manager.h"
+	"MENU.h"
+	"lector_de_texto.h"
+	"texto_condicionales.h"
+
+1750044387 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\texto_condicionales.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"texto_condicionales.h"
+	"lector_de_texto.h"
+
+1750043945 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\texto_condicionales.h
+

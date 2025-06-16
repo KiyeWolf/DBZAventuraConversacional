@@ -40,6 +40,5 @@
 ./ArchivosDeTexto/freezerPidePerdon.txt
 ./ArchivosDeTexto/freezerNoPerdonado.txt
 ./ArchivosDeTexto/freezerEsPerdonado.txt
-./ArchivosDeTexto/diosesJuzgando.txt
 ./ArchivosDeTexto/finalBueno.txt
 ./ArchivosDeTexto/finalMalo.txt

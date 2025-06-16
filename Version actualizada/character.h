@@ -9,7 +9,7 @@
 
 
 typedef struct character_status {
-    unsigned int XP, LVL, ID;
+    unsigned int ID;
     unsigned int CD_counter[CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_PERSONAJE];
     char movement_unlocked_flag[CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_PERSONAJE];
 }t_character_status;

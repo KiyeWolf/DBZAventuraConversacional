@@ -2,12 +2,12 @@
 #define ENEMY_H_INCLUDED
 
 #include "movement.h"
-#define CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_ENEMIGO
+#define CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_ENEMIGO 5
 
 typedef struct enemy_stats {
     char* NAME;
     float COMBAT_SPEED;
-    unsigned int HP, ATK, ENERGY, ARMOR, XP, cantidad_de_movimientos;
+    unsigned int HP, ATK, ENERGY, ARMOR, cantidad_de_movimientos;
     t_movements movs[CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_ENEMIGO];
 }t_enemy_stats;
 

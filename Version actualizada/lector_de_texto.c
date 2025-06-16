@@ -1,4 +1,7 @@
 #include "lector_de_texto.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // Busca el archivo y lo abre y llena el buffer
 int cinematica(char* nombreTxt)
