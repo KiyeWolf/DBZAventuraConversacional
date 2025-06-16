@@ -5,6 +5,7 @@
 
 enum e_character_id{
     GOKU,
+    GOHAN,
     CANTIDAD_DE_PERSONAJES
 };
 
