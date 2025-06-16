@@ -1,4 +1,3 @@
-./ArchivosDeTexto/AltarDeGuardado.txt
 ./ArchivosDeTexto/introduccion.txt 
 ./ArchivosDeTexto/caminoANamek.txt 
 ./ArchivosDeTexto/barNamek.txt 

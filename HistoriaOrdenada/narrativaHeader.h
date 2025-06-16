@@ -11,7 +11,6 @@
 #define ACEPTADO 1
 #define RECHAZADO 0
 
-
 void HistoriaCompleta();
 char* devolverNombreDeArchSegunCodigo(int codigo_linea);
 void leerPreguntaBooleana(int* res);
