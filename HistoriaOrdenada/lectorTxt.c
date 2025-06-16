@@ -49,11 +49,13 @@ void leerPreguntaBooleana(int* res)
     }
     *res = num;
 }
+/*
 void Altar()
 {
     cinematica("AltarDeGuardado.txt");
     puts("¿Qué deseás hacer? \n 1. Guardar Progreso \n 2. Recuperar Energía \n 3. Organizar Equipo \n 0. Salir ");
 }
+*/
 int acertijo()
 {
     int respuesta;
@@ -62,18 +64,18 @@ int acertijo()
     system("cls");
     puts("\"Soy lo que es, lo que fue y lo que vendrá. \n Divídeme y me multiplicaré. \n Olvidame, y jamás podrás cruzar.¿Qué soy? \"\n");
     puts("1) El tiempo \n 2) El silencio \n 3) El conocimiento \n 4) El poder");
-    leerRespuestaMultiples(&respuesta, 1, 4);
+    leerRespuestaMultiples(&respuesta, CANT_MINIMA_DE_OPCIONES, CANT_MAXIMA_DE_OPCIONES);
     system("cls");
-    if (respuesta!=3)
+    if (respuesta!=RESPUESTA_CORRECTA)
     {
-        return 0;
+        return RECHAZADO;
     }
     else
     {
-        return 1;
+        return ACEPTADO;
     }
 }
-void leerRespuestaMultiples(int* res, int li, int ls)
+int leerRespuestaMultiples(int* res, int li, int ls)
 {
     int num;
     scanf("%d",&num);
@@ -82,60 +84,20 @@ void leerRespuestaMultiples(int* res, int li, int ls)
         puts("Error");
         scanf("%d",&num);
     }
-    *res = num;
+    return num;
 }
-void aceptarAyudaEsqueleto(int* esqueleto)
-{
-    int respuesta;
-    respuesta = preguntarYLeerSegunTexto("¿DESEAS AYUDAR AL ESQUELETO QUE TE PIDE AYUDA? \n\n1. Si \n\n0. No");
-    if (respuesta)
-    {
-        *esqueleto = ACEPTADO;
-    }
-    else
-    {
-        *esqueleto = RECHAZADO;
-    }
-}
-int aceptarAyudarAnimales()
-{
-    return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A LOS ANIMALES QUE TE PIDEN AYUDA? \n\n1. Si \n\n0. No");
-}
-int tutorial()
-{
-    return preguntarYLeerSegunTexto("¿DESEAS HACER EL TUTORIAL? \n\n1. Si \n\n0. No");
-}
-int investigarRuidos()
-{
-    return preguntarYLeerSegunTexto("¿QUIERES INVESTIGAR LOS RUIDOS QUE ESCUCHAS?\n1.SI\n0.NO");
-}
-int rodearGolem()
-{
-    return preguntarYLeerSegunTexto("¿QUIERES RODEAR AL GOLEM?\n1.SI\n0.NO");
-}
-int perdonarAfreezer()
-{
-    return preguntarYLeerSegunTexto("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
-}
-//void IniciarSecuencia(int indice, char *secuencias[]) {
-  //  cinematica(secuencias[indice]);
-//}
-int ayudarAVegeta()
-{
-  return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A VEGGETA? \n\n1. Si \n\n0. No");
-}
+
 char* devolverNombreDeArchSegunCodigo(int codigo_linea) {
-    FILE* archivo = fopen("Ruta.txt", "r");
+    FILE* archivo = fopen("./HistoriaOrdenada/Ruta.txt", "r");
     if (!archivo) {
         puts("No se pudo abrir el archivo");
-        return NULL;
+        return ERR_ARCH;
     }
 
     static char lineaDeTexto[MAX_LINEA];
     int contador = 0;
 
     while (fgets(lineaDeTexto, MAX_LINEA, archivo)) {
-        printf("Buscando línea número: %d\n, %d", codigo_linea, contador);
         if (contador == codigo_linea) {
             lineaDeTexto[strcspn(lineaDeTexto, "\n")] = '\0';
             fclose(archivo);
@@ -145,5 +107,14 @@ char* devolverNombreDeArchSegunCodigo(int codigo_linea) {
     }
 
     fclose(archivo);
-    return NULL;  // Si no se encontró la línea
+    return ERR_ARCH;
+}
+int perdonarAfreezer()
+{
+    return preguntarYLeerSegunTexto("¿DESEAS PERDONAR A FREEZER?\n1.SI\n0.NO");
+}
+
+int ayudarAVegeta()
+{
+  return preguntarYLeerSegunTexto("¿DESEAS AYUDAR A VEGGETA? \n\n1. Si \n\n0. No");
 }
