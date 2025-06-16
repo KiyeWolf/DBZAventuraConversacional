@@ -8,4 +8,10 @@ int acertijo();
 void leerRespuestaMultiples(int* res, int li, int ls);
 void leerPreguntaBooleana(int* res);
 
+
+
+{
+    0
+}
+
 #endif // TEXTO_CONDICIONALES_H_INCLUDED

@@ -1,6 +1,5 @@
 #include "lector_de_texto.h"
 
-
 // Busca el archivo y lo abre y llena el buffer
 int cinematica(char* nombreTxt)
 {
@@ -28,7 +27,6 @@ int cinematica(char* nombreTxt)
     fclose(archivo);
     return TODO_OK;
 }
-
 
 //Busca la ruta de el archivo y devuelve un char* con el contenido
 char* devolverNombreDeArchSegunCodigo(int codigo_linea) {

@@ -1,7 +1,7 @@
 #ifndef PARTY_H_INCLUDED
 #define PARTY_H_INCLUDED
 
-#define PARTY_MAX 3
+#define PARTY_MAX 5
 #include "character.h"
 
 
