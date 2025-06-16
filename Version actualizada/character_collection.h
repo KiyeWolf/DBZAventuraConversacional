@@ -6,6 +6,9 @@
 enum e_character_id{
     GOKU,
     GOHAN,
+    KRILLIN,
+    VEGETA,
+    PICCOLO,
     CANTIDAD_DE_PERSONAJES
 };
 

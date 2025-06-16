@@ -6,14 +6,14 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
         GOKU,
         "GOKU",
         {
-            150, 30, 30, 10, 9.0f
+            300, 40, 40, 15, 9.0f
         },
         4,
         {
-            { "Kame Hame Ha", 10, 2, 2 },
-            { "Genki Dama", 50, 20, 10 },
-            { "Ataque rapido", 5, 1, 1 },
-            { "Carga", 8, 2, 1 }
+            { "Kame Hame Ha", 60, 2, 2 },
+            { "Genki Dama", 100, 20, 10 },
+            { "Ataque rapido", 20, 1, 1 },
+            { "Carga", 30, 2, 1 }
         }
     }
     {
@@ -28,7 +28,43 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
             { "Kame Hame Ha", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
-        }
+        },
+        KRILLIN,
+        "KRILLIN",
+        {
+            70, 10, 10, 5, 5.0f
+        },
+        4,
+        {
+            { "Disco", 30, 2, 2 },
+            { "Kame Hame Ha", 70, 20, 10 },
+            { "Ataque rapido", 20, 1, 1 },
+            { "Carga", 30, 2, 1 }
+        },
+        VEGETA,
+        "VEGETA",
+        {
+            200, 30, 30, 10, 7.0f
+        },
+        4,
+        {
+            { "Garlic Ho", 50, 2, 2 },
+            { "Resplandor final", 70, 20, 10 },
+            { "Ataque rapido", 20, 1, 1 },
+            { "Carga", 30, 2, 1 }
+        },
+        PICCOLO,
+        "PICCOLO",
+        {
+            200, 30, 30, 10, 7.0f
+        },
+        4,
+        {
+            { "Makouhou", 50, 2, 2 },
+            { "Makankosappo", 70, 20, 10 },
+            { "Ataque rapido", 20, 1, 1 },
+            { "Carga", 30, 2, 1 }
+        },
     }
 };
 t_retorno_template devolver_template_por_id(unsigned int id)
