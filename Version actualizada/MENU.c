@@ -36,9 +36,9 @@ void continuar(void *ptr){
         exit(3);
     }
     FILE* fp;
-    fp = fopen("partida_guardad.save", "rb");
+    fp = fopen("partida_guardada.save", "rb");
     if(fp == NULL){
-        printf("Error al abrir el archivo de guardado");
+        printf("Error al abrir el archivo de guardado NULL");
         exit(1);
     }
     if(fread(game_state, sizeof(t_gameState), 1, fp) == 0){

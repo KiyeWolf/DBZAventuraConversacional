@@ -191,12 +191,12 @@ int mostrar_items_party (t_party_manager* party, int personaje)
 void guardar_partida(t_gameState* game_state)
 {
     FILE* fp;
-    fp = fopen("partida_guardad.save", "wb");
+    fp = fopen("partida_guardada.save", "wb");
     if(fp == NULL){
         printf("Error al guardar la partida\n");
         exit(1);
     }
-    if(fwrite(game_state, sizeof(game_state), 1, fp) == 0)
+    if(fwrite(game_state, sizeof(t_gameState), 1, fp) == 0)
     {
         printf("Error al guardar la partida\n");
         exit(0);

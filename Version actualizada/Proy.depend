@@ -158,10 +158,10 @@
 1747047271 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item.c
 	"item.h"
 
-1749676105 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item_collection.c
+1750129945 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\item_collection.c
 	"item_collection.h"
 
-1750129120 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\menu.c
+1750131494 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\menu.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -193,7 +193,7 @@
 1750102889 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\enemy.h
 	"movement.h"
 
-1750129508 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\game_manager.c
+1750131516 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\game_manager.c
 	<stdio.h>
 	<stdlib.h>
 	"enemy_collection.h"
@@ -232,7 +232,7 @@
 
 1750032747 c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\lector_de_texto.h
 
-1750123125 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\nodo.c
+1750130221 source:c:\users\patri\documents\github\dbzaventuraconversacional\version actualizada\nodo.c
 	<stdio.h>
 	"nodo.h"
 
