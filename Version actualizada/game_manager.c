@@ -79,7 +79,7 @@ void game_loop(t_gameState* game_state)
                 }
             }
         }
-        if(game_state->nodo_actual == 43 || game_state->nodo_actual == 44)
+        if(game_state->nodo_actual == 42 || game_state->nodo_actual == 41)
         {
             system("cls");
             printf("Fin del juego, gracias por jugar");
