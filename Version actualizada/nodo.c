@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include "nodo.h"
 
-#define NO_HAY_PELEA 0
-#define HAY_PELEA 1
-
-#define NO_ES_HOGUERA 0
-#define ES_HOGUERA 1
-
-#define NO_HAY_BRANCH 0
-#define HAY_BRANCH 1
-
 t_nodo nodos[CANT_MAX_NODOS] = {
     {
         {0, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -40,7 +31,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {3, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { BANDIDOS, BANDIDOS, BANDIDOS, BANDIDOS }, 4,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {SALUD, PODER}, 2
     },
     {
         {4, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -52,7 +43,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {5, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { SOLDADO_BASICO, SOLDADO_BASICO, SOLDADO_BASICO, SOLDADO_BASICO }, 4,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {PODER, TRAJE_ENCANTADO}, 2
     },
     {
         {6, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -82,7 +73,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {9, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { BESTIAS_DE_LA_NIEBLA, BESTIAS_DE_LA_NIEBLA, ENEMIGO_VACIO, ENEMIGO_VACIO }, 2,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {VIGOR, GEMA_DE_SALUD}, 2
     },
     {
         {10, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -112,13 +103,13 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {13, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { GUARDIAN, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 1,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {GEMA_DE_VIGOR, GEMA_DE_PODER}, 2
     },
     {
         {14, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { GUARDIAN_FASE_DOS, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 1,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {BOTAS_ANTIGUAS, BOTAS_ENCANTADAS}, 2
     },
     {
         {15, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -136,7 +127,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {16, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { SOLDADO_FREEZER_ELITE, SOLDADO_FREEZER_ELITE, SOLDADO_FREEZER_ELITE, ENEMIGO_VACIO }, 3,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {GEMA_DE_VIGOR, TRAJE_ENCANTADO}, 2
     },
     {
         {17, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -148,7 +139,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {18, 0}, NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { GOLEM_NAMEKIANO, GOLEM_NAMEKIANO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 2,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {BOTAS_ANTIGUAS, GEMA_DE_VIGOR}, 2
     },
     {
         {19, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -178,13 +169,13 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {22, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { HOLOGRAMA_DE_FREEZER, SOLDADOS_INTERMEDIOS, SOLDADOS_INTERMEDIOS, ENEMIGO_VACIO }, 3,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {GEMA_DE_SALUD, GEMA_DE_PODER}, 2
     },
     {
         {23, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         NO_HAY_PELEA, { ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 0,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}
+        {ITEM_VACIO, ITEM_VACIO}, 0
     },
     {
         {24, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -208,7 +199,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {26, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { BANDIDOS, BANDIDOS, BANDIDOS, BANDIDOS }, 4,
         { GOHAN, KRILLIN }, 2,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {GEMA_DE_SALUD, GEMA_DE_VIGOR}, 2
     },
         {
         {27, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -220,7 +211,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {28, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         NO_HAY_PELEA, { ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 0,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {GEMA_DE_PODER, GEMA_DE_PODER}, 2
     },
         {
         {29, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
@@ -232,13 +223,13 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {30, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { SOLDADOS_SAIYAJIN, SOLDADOS_SAIYAJIN, SOLDADOS_SAIYAJIN, SOLDADOS_SAIYAJIN }, 4,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {PODER, PODER}, 2
     },
     {
         {31, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         HAY_PELEA, { VEGETA_ENEMIGO, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 1,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}, 0
+        {PODER, PODER}, 2
     },
     {
         {32, 33}, HAY_BRANCH, NO_ES_HOGUERA,
@@ -256,13 +247,13 @@ t_nodo nodos[CANT_MAX_NODOS] = {
         {34, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         NO_HAY_PELEA, { ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 0,
         { GOHAN, KRILLIN, PICCOLO }, 3,
-        {ITEM_VACIO, ITEM_VACIO}
+        {ITEM_VACIO, ITEM_VACIO},0
     },
     {
         {35, 0},NO_HAY_BRANCH, NO_ES_HOGUERA,
         NO_HAY_PELEA, { ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO, ENEMIGO_VACIO }, 0,
         { GOHAN, KRILLIN, PICCOLO, VEGETA }, 4,
-        {ITEM_VACIO, ITEM_VACIO}
+        {ITEM_VACIO, ITEM_VACIO},0
     },
     {
         {0, 0},NO_HAY_BRANCH, ES_HOGUERA,
@@ -309,8 +300,7 @@ t_nodo nodos[CANT_MAX_NODOS] = {
 
 };
 
-
-unsigned int cargar_nodos(t_nodo* nodo)
+t_nodo retornar_nodo_por_id(unsigned int id)
 {
-
+    return nodos[id];
 }

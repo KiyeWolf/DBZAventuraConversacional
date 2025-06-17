@@ -33,5 +33,5 @@ typedef struct {
 }t_retorno_enemigo;
 
 t_retorno_enemigo devolver_enemigo_por_id(unsigned int id);
-
+unsigned int agregar_enemigos_ids(t_enemy_stats* enemigos, unsigned int* ids, unsigned int cantidad);
 #endif // ENEMY_COLLECTION_H_INCLUDED

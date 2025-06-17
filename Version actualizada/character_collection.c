@@ -22,10 +22,9 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
         {
             70, 10, 10, 5, 5.0f
         },
-        4,
+        3,
         {
             { "Masenko", 30, 2, 2 },
-            { "Kame Hame Ha", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
         }
@@ -36,10 +35,9 @@ t_character_template character_collection_array[CANTIDAD_DE_PERSONAJES] =
         {
             70, 10, 10, 5, 5.0f
         },
-        4,
+        3,
         {
             { "Disco", 30, 2, 2 },
-            { "Kame Hame Ha", 70, 20, 10 },
             { "Ataque rapido", 20, 1, 1 },
             { "Carga", 30, 2, 1 }
         }

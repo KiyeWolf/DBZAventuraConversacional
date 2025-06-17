@@ -179,3 +179,17 @@ t_retorno_enemigo devolver_enemigo_por_id(unsigned int id)
     retorno.retorno = enemy_collection[id];
     return retorno;
 }
+
+unsigned int agregar_enemigos_ids(t_enemy_stats* enemigos,
+                                  unsigned int* ids,
+                                  unsigned int cantidad)
+{
+    t_retorno_enemigo resultado;
+    for(int i = 0; i < cantidad; i++){
+        resultado = devolver_enemigo_por_id(ids[i]);
+        if(resultado.estado == 0 )
+            return 1;
+        enemigos[i] = resultado.retorno;
+    }
+    return 0;
+}

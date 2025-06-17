@@ -7,6 +7,16 @@
 #include "item_collection.h"
 #include "equipamiento.h"
 
+#define MOVIMIENTO_INEXISTENTE -1
+#define MOVIMIENTO_NO_DESBLOQUEADO -2
+#define AUN_ESPERANDO_CD -3
+#define ENERGIA_INSUFICIENTE -4
+
+#define MAX_HP_NO_HEAL 0
+#define CHAR_HEALED 1
+
+#define ID_INVALIDO 1
+
 
 typedef struct character_status {
     unsigned int ID;

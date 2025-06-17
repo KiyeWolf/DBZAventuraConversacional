@@ -4,6 +4,9 @@
 #include "movement.h"
 #define CANTIDAD_MAXIMA_DE_MOVIMIENTOS_POR_ENEMIGO 5
 
+#define CANT_MAX_ENEMY 4
+
+
 typedef struct enemy_stats {
     char* NAME;
     float COMBAT_SPEED;

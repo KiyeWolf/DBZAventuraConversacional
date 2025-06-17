@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Combat_Manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Combat_Manager.h" />
 		<Unit filename="MENU.c">
 			<Option compilerVar="CC" />
 		</Unit>

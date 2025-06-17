@@ -7,14 +7,21 @@ t_retorno_character devolver_personaje_manager_id (t_character_manager* personaj
     t_retorno_character retorno;
     for(int i = 0; i < CANTIDAD_DE_PERSONAJES; i++)
         if(devolver_id_personaje(&personajes->personajes_arr[i]) == id){
-            if(personajes->flags_de_personajes_desbloqueados[i] == 1){
-                retorno.estado_retorno = 1;
-                retorno.retorno = &personajes->personajes_arr[i];
-                return retorno;
-            }
+            retorno.estado_retorno = 1;
+            retorno.retorno = &personajes->personajes_arr[i];
+            return retorno;
         }
     retorno.estado_retorno = 0;
     return retorno;
+}
+
+unsigned int desbloquear_personajes_array_ids(t_character_manager* personajes,
+                                              unsigned int* ids,
+                                              unsigned int cantidad)
+{
+    for(int i = 0; i < cantidad; i++){
+        cambiar_estado_por_id(personajes, ids[i], 1);
+    }
 }
 
 unsigned int cambiar_estado_por_id (t_character_manager* personajes,
@@ -85,4 +92,11 @@ int remover_item_manager(t_character_manager* personajes,
     }
 
     return remover_item_personaje(resultado.retorno, id);
+}
+void calcular_stats_actuales_manager(t_character_manager* personajes)
+{
+    for(int i = 0; i < CANTIDAD_DE_PERSONAJES; i++)
+    {
+        calcular_stats_actuales(&personajes->personajes_arr[i]);
+    }
 }

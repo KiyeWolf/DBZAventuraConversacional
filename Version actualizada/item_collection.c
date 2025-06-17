@@ -11,6 +11,56 @@ t_item item_collection[] =
         "BOTAS", BOTAS,
         0,0,0,1,
         0,0,0,0,0,0
+    },
+        {
+        "SALUD+", SALUD,
+        20,0,0,0,
+        0,0,0,0,0,0
+    },
+    {
+        "PODER+", PODER,
+        0,20,0,0,
+        0,0,0,0,0,0
+    },
+    {
+        "VIGOR+", VIGOR,
+        0,0,20,0,
+        0,0,0,0,0,0
+    },
+    {
+        "TRAJE REFORZADO", TRAJE_REFORZADO,
+        0,0,0,10,
+        0,0,0,0,0,0
+    },
+    {
+        "GEMA DE SALUD", GEMA_DE_SALUD,
+        0,0,0,0,
+        1.2,0,0,0,0,0
+    },
+    {
+        "GEMA DE PODER", GEMA_DE_PODER,
+        0,0,0,0,
+        0,1.2,0,0,0,0
+    },
+    {
+        "GEMA DE VIGOR", GEMA_DE_VIGOR,
+        0,0,0,0,
+        0,0,1.3,0,0,0
+    },
+    {
+        "TRAJE ENCANTADO", TRAJE_ENCANTADO,
+        0,0,0,0,
+        0,0,0,1.15,0,0
+    },
+    {
+        "BOTAS ENCANTADAS", BOTAS_ENCANTADAS,
+        0,0,0,0,
+        0,0,0,0,1.3,0
+    },
+    {
+        "BOTAS ANTIGUAS", BOTAS_ANTIGUAS,
+        0,0,0,0,
+        0,0,0,0,0,8
     }
 };
 

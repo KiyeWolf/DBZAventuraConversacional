@@ -1,17 +1,6 @@
 #include "character.h"
 #include <stdio.h>
 
-#define MOVIMIENTO_INEXISTENTE -1
-#define MOVIMIENTO_NO_DESBLOQUEADO -2
-#define AUN_ESPERANDO_CD -3
-#define ENERGIA_INSUFICIENTE -4
-
-
-#define MAX_HP_NO_HEAL 0
-#define CHAR_HEALED 1
-
-
-#define ID_INVALIDO 1
 
 //Interacciones
 unsigned int recibir_ataque(t_character* personaje,
@@ -89,7 +78,7 @@ unsigned int inicializar_personaje(t_character* personaje,
 void inicializar_movimientos (t_character* personaje)
 {
     for(int i = 0; i < personaje->personaje_template.cantidad_de_movimientos; i++)
-        personaje->status.movement_unlocked_flag[i] = 0;
+        personaje->status.movement_unlocked_flag[i] = 1;
 
 }
 
